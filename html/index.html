@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pakistan Horizons - Discover Breathtaking Adventures & Tours</title>
+  <meta name="description" content="Explore Pakistan's most enchanting destinations with Pakistan Horizons. Certified tour packages to Hunza Valley, Swat, Skardu, Lahore Heritage, and Gwadar Beach.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- Top Info Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-contact">
+        <a href="tel:+923001234567">+92 300 1234567</a>
+        <a href="mailto:pakistanhorizons@gmail.com">info@pakistanhorizons.com</a>
+        <span>Islamabad • Lahore • Karachi • Gilgit</span>
+      </div>
+      <div class="top-bar-actions">
+        <span>24/7 Verified Local Guides</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        Pakistan<span>Horizons</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li class="dropdown">
+          <a href="#destinations" class="nav-link dropdown-toggle">
+            Destinations
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="lahore.html" class="dropdown-link">Lahore Heritage</a></li>
+            <li><a href="karachi.html" class="dropdown-link">Karachi Coast</a></li>
+            <li><a href="islamabad.html" class="dropdown-link">Islamabad Capital</a></li>
+            <li><a href="hunza.html" class="dropdown-link">Hunza Valley</a></li>
+            <li><a href="swat.html" class="dropdown-link">Swat Valley</a></li>
+          </ul>
+        </li>
+        <li><a href="packages.html" class="nav-link">Tour Packages</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="policies.html" class="nav-link">Policies</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="btn btn-primary btn-sm" data-open-booking data-tour-title="Custom Pakistan Explorer" data-tour-price="50000" data-tour-days="6">
+          Book a Trip
+        </button>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          Award-Winning Pakistan Travel Partner 2025 - 2026
+        </div>
+        <h1 class="hero-title">
+          Experience The Untamed Splendor of <span class="highlight">Pakistan</span>
+        </h1>
+        <p class="hero-subtitle">
+          From the towering Karakoram & Himalayan peaks of Hunza and Skardu to the rich Mughal heritage of Lahore and golden shores of Gwadar.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-accent btn-lg" data-open-booking data-tour-title="Signature Pakistan Grand Tour" data-tour-price="65000" data-tour-days="7">
+            Start Your Journey ➔
+          </button>
+          <a href="packages.html" class="btn btn-white btn-lg">
+            Explore All Packages
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Search / Booking Floating Bar -->
+  <div class="container">
+    <div class="search-card">
+      <form id="heroSearchForm" class="search-form-grid">
+        <div class="search-field">
+          <label>Search Destination</label>
+          <input type="text" id="destSearchInput" placeholder="e.g. Hunza, Swat, Lahore, Skardu...">
+        </div>
+        <div class="search-field">
+          <label>Trip Category</label>
+          <select id="destCategorySelect">
+            <option value="all">All Experiences</option>
+            <option value="mountains">Mountains & Treks</option>
+            <option value="culture">Heritage & Culture</option>
+            <option value="coastal">Coastal & Beaches</option>
+            <option value="valleys">Scenic Valleys</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label>Travel Month</label>
+          <select>
+            <option>Spring (Mar - May)</option>
+            <option selected>Summer Peak (Jun - Aug)</option>
+            <option>Autumn Foliage (Sep - Nov)</option>
+            <option>Winter Snow & Ski (Dec - Feb)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="height: 48px;">
+          Find Destinations
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Stats Counter Bar -->
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <h3>12,500+</h3>
+        <p>Satisfied Travelers</p>
+      </div>
+      <div class="stat-item">
+        <h3>45+</h3>
+        <p>Curated Destinations</p>
+      </div>
+      <div class="stat-item">
+        <h3>99.4%</h3>
+        <p>5-Star Reviews</p>
+      </div>
+      <div class="stat-item">
+        <h3>10+</h3>
+        <p>Years Trusted Service</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Destinations Section -->
+  <section id="destinations" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Explore Pakistan</span>
+        <h2 class="section-title">Iconic Travel Destinations</h2>
+        <p class="section-description">Choose from emerald alpine valleys, historic UNESCO Mughal citadels, serene coastal retreats, and vibrant modern capitals.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Destinations</button>
+        <button class="filter-btn" data-filter="mountains">Mountains & Treks</button>
+        <button class="filter-btn" data-filter="culture">Heritage & Culture</button>
+        <button class="filter-btn" data-filter="coastal">Coastal & Beaches</button>
+        <button class="filter-btn" data-filter="valleys">Scenic Valleys</button>
+      </div>
+
+      <!-- Destinations Grid -->
+      <div class="destinations-grid">
+
+        <!-- Card 1: Hunza Valley -->
+        <div class="destination-card" data-category="mountains valleys">
+          <div class="card-image-wrap">
+            <img src="../images/hunza-valley.jpg" alt="Hunza Valley with snowcapped peaks">
+            <span class="card-floating-badge">Gilgit-Baltistan</span>
+            <span class="card-rating-badge">★ 4.9 (340)</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Hunza Valley</h3>
+            </div>
+            <div class="card-location">Karakoram Highway, Gilgit-Baltistan</div>
+            <p class="card-text">Famed for the 700-year-old Baltit Fort, turquoise Attabad Lake, Passu Cones, and hospitable culture tucked among 7,000m+ peaks.</p>
+            <div class="card-meta-list">
+              <div class="card-meta-item">Best: Apr - Oct</div>
+              <div class="card-meta-item">Trekking & Boating</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">
+                <span class="card-price-label">Starting From</span>
+                <span class="card-price-val">PKR 75,000</span>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="hunza.html" class="btn btn-outline btn-sm">Guide</a>
+                <button class="btn btn-primary btn-sm" data-open-booking data-tour-title="Hunza Valley Explorer" data-tour-price="75000" data-tour-days="7">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Skardu Valley -->
+        <div class="destination-card" data-category="mountains valleys">
+          <div class="card-image-wrap">
+            <img src="../images/destination1.jpg" alt="Skardu Valley scenic mountains and lakes">
+            <span class="card-floating-badge">Gilgit-Baltistan</span>
+            <span class="card-rating-badge">★ 5.0 (290)</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Skardu Valley & Deosai</h3>
+            </div>
+            <div class="card-location">Baltistan Region</div>
+            <p class="card-text">Gateway to K2 and four of the world's 14 highest peaks. Marvel at Upper Kachura Lake, Cold Desert Katpana, and Deosai Plateau.</p>
+            <div class="card-meta-list">
+              <div class="card-meta-item">Best: May - Sep</div>
+              <div class="card-meta-item">Lakes & Safari</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">
+                <span class="card-price-label">Starting From</span>
+                <span class="card-price-val">PKR 92,000</span>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="packages.html" class="btn btn-outline btn-sm">Details</a>
+                <button class="btn btn-primary btn-sm" data-open-booking data-tour-title="Skardu & Deosai Safari" data-tour-price="92000" data-tour-days="8">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Swat & Kalam Valley -->
+        <div class="destination-card" data-category="valleys mountains">
+          <div class="card-image-wrap">
+            <img src="../images/kalam_valley.jpg" alt="Kalam Valley Swat river and pine forests">
+            <span class="card-floating-badge">Khyber Pakhtunkhwa</span>
+            <span class="card-rating-badge">★ 4.8 (215)</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Swat & Kalam Valley</h3>
+            </div>
+            <div class="card-location">Swat District, KPK</div>
+            <p class="card-text">The 'Switzerland of the East' features lush alpine meadows, Malam Jabba ski slopes, Mahodand Lake jeep safaris, and ancient Buddhist heritage.</p>
+            <div class="card-meta-list">
+              <div class="card-meta-item">Best: Year-Round</div>
+              <div class="card-meta-item">Skiing & Lakes</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">
+                <span class="card-price-label">Starting From</span>
+                <span class="card-price-val">PKR 48,000</span>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="swat.html" class="btn btn-outline btn-sm">Guide</a>
+                <button class="btn btn-primary btn-sm" data-open-booking data-tour-title="Swat & Kalam Explorer" data-tour-price="48000" data-tour-days="5">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Lahore Cultural Heritage -->
+        <div class="destination-card" data-category="culture">
+          <div class="card-image-wrap">
+            <img src="../images/lahore-badshahi-mosque.jpg" alt="Badshahi Mosque Lahore illuminated at dusk">
+            <span class="card-floating-badge">Punjab</span>
+            <span class="card-rating-badge">★ 4.9 (420)</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Historic Lahore</h3>
+            </div>
+            <div class="card-location">Lahore, Punjab</div>
+            <p class="card-text">Immerse yourself in UNESCO Mughal monuments, Badshahi Mosque, Lahore Fort Shish Mahal, Shalimar Gardens, and world-famous foodie streets.</p>
+            <div class="card-meta-list">
+              <div class="card-meta-item">Best: Oct - Mar</div>
+              <div class="card-meta-item">History & Food</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">
+                <span class="card-price-label">Starting From</span>
+                <span class="card-price-val">PKR 32,000</span>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="lahore.html" class="btn btn-outline btn-sm">Guide</a>
+                <button class="btn btn-primary btn-sm" data-open-booking data-tour-title="Lahore Heritage Tour" data-tour-price="32000" data-tour-days="3">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Karachi & Arabian Coast -->
+        <div class="destination-card" data-category="coastal culture">
+          <div class="card-image-wrap">
+            <img src="../images/clifton_beach.jpg" alt="Karachi Clifton Beach sunset over Arabian Sea">
+            <span class="card-floating-badge">Sindh</span>
+            <span class="card-rating-badge">★ 4.7 (180)</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Karachi Coast & Culture</h3>
+            </div>
+            <div class="card-location">Karachi, Sindh</div>
+            <p class="card-text">Explore the 'City of Lights' with Clifton Beach camel rides, Quaid-e-Azam Mausoleum, Maritime Museum, and thriving Arabian seafood bazaars.</p>
+            <div class="card-meta-list">
+              <div class="card-meta-item">Best: Nov - Feb</div>
+              <div class="card-meta-item">Coastal & Cuisine</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">
+                <span class="card-price-label">Starting From</span>
+                <span class="card-price-val">PKR 38,000</span>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="karachi.html" class="btn btn-outline btn-sm">Guide</a>
+                <button class="btn btn-primary btn-sm" data-open-booking data-tour-title="Karachi Coastal Tour" data-tour-price="38000" data-tour-days="3">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Islamabad Capital & Margalla -->
+        <div class="destination-card" data-category="culture mountains">
+          <div class="card-image-wrap">
+            <img src="../images/faisal_mosque.jpg" alt="Faisal Mosque Islamabad against the Margalla Hills">
+            <span class="card-floating-badge">Federal Capital</span>
+            <span class="card-rating-badge">★ 4.9 (310)</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Islamabad Capital & Margalla</h3>
+            </div>
+            <div class="card-location">Islamabad Capital Territory</div>
+            <p class="card-text">One of the world's most scenic capitals. Discover the iconic Faisal Mosque, scenic hiking trails in Margalla Hills National Park, and Lok Virsa folk museum.</p>
+            <div class="card-meta-list">
+              <div class="card-meta-item">Best: Sep - Apr</div>
+              <div class="card-meta-item">Hiking & Modern</div>
+            </div>
+            <div class="card-footer">
+              <div class="card-price">
+                <span class="card-price-label">Starting From</span>
+                <span class="card-price-val">PKR 28,000</span>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="islamabad.html" class="btn btn-outline btn-sm">Guide</a>
+                <button class="btn btn-primary btn-sm" data-open-booking data-tour-title="Islamabad Capital Retreat" data-tour-price="28000" data-tour-days="3">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Trip Customizer / Calculator -->
+  <section class="section" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Instant Quotation</span>
+        <h2 class="section-title">Customize Your Own Itinerary</h2>
+        <p class="section-description">Pick your preferred destinations, number of guests, and luxury tier to view an instant itemized breakdown.</p>
+      </div>
+
+      <div class="planner-box">
+        <div class="planner-grid">
+          <div class="planner-form-section">
+            <h3>Trip Parameters</h3>
+            <div class="planner-fields">
+              <div class="search-field">
+                <label>Primary Destination</label>
+                <select id="calcCity">
+                  <option value="hunza" selected>Hunza Valley (Gilgit)</option>
+                  <option value="swat">Swat & Malam Jabba</option>
+                  <option value="skardu">Skardu & Deosai</option>
+                  <option value="lahore">Lahore Cultural Tour</option>
+                  <option value="karachi">Karachi Coast & Maritime</option>
+                  <option value="islamabad">Islamabad Capital</option>
+                </select>
+              </div>
+
+              <div class="search-field">
+                <label>Duration (Days)</label>
+                <input type="number" id="calcDays" value="5" min="2" max="30">
+              </div>
+
+              <div class="search-field">
+                <label>Number of Travelers</label>
+                <input type="number" id="calcTravelers" value="2" min="1" max="50">
+              </div>
+
+              <div class="search-field">
+                <label>Hotel Class</label>
+                <select id="calcHotel">
+                  <option value="3star">Standard (3-Star Boutique)</option>
+                  <option value="4star" selected>Deluxe (4-Star Premium)</option>
+                  <option value="5star">Luxury (5-Star / Palaces)</option>
+                </select>
+              </div>
+
+              <div class="planner-full" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                  <input type="checkbox" id="calcTransport" checked style="width: 18px; height: 18px; accent-color: var(--primary);">
+                  Include Private 4x4 / Sedan Transport
+                </label>
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                  <input type="checkbox" id="calcGuide" checked style="width: 18px; height: 18px; accent-color: var(--primary);">
+                  Include Dedicated Licensed Tour Guide
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="planner-summary-card">
+            <div>
+              <h4 style="font-size: 1.25rem; margin-bottom: 1.25rem;">Live Cost Estimate</h4>
+              <div class="summary-row">
+                <span>Trip Duration:</span>
+                <strong id="calcDaysCount">5 Days</strong>
+              </div>
+              <div class="summary-row">
+                <span>Travelers:</span>
+                <strong id="calcGuestsCount">2 Person(s)</strong>
+              </div>
+              <div class="summary-row">
+                <span>Accommodation:</span>
+                <strong id="calcHotelTierText">DELUXE</strong>
+              </div>
+              <div class="summary-row">
+                <span>GST & Permits:</span>
+                <strong style="color: #10b981;">Included (5%)</strong>
+              </div>
+              <div class="summary-row total">
+                <span>Estimated Total:</span>
+                <span id="calcTotalOutput" style="color: var(--primary);">PKR 120,000</span>
+              </div>
+            </div>
+
+            <button id="calcBookNowBtn" 
+                    class="btn btn-accent btn-lg" 
+                    style="margin-top: 1.5rem; width: 100%;" 
+                    data-open-booking 
+                    data-tour-title="Custom Tour: HUNZA (5 Days)" 
+                    data-tour-price="120000" 
+                    data-tour-days="5">
+              Lock In This Package
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Currency Converter & Live Weather Section -->
+  <div class="container">
+    <div class="tools-banner">
+      <div class="tools-info">
+        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">International Guests</span>
+        <h3>Real-time Currency Converter</h3>
+        <p>Convert your domestic currency directly to Pakistani Rupee (PKR) at standard interbank rates for hassle-free trip planning.</p>
+        <div style="display: flex; gap: 1rem; color: #cbd5e1; font-size: 0.9rem;">
+          <span>Zero Hidden Fees</span>
+          <span>•</span>
+          <span>Card & Cash Support</span>
+        </div>
+      </div>
+
+      <div class="converter-widget">
+        <div class="converter-inputs">
+          <div class="search-field">
+            <label style="color: #cbd5e1;">Amount</label>
+            <input type="number" id="currencyAmount" value="500" min="1">
+          </div>
+          <div class="search-field">
+            <label style="color: #cbd5e1;">From Currency</label>
+            <select id="currencyFrom">
+              <option value="USD" selected>USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="AED">AED (AED)</option>
+              <option value="SAR">SAR (SAR)</option>
+              <option value="CAD">CAD (C$)</option>
+            </select>
+          </div>
+        </div>
+        <div class="converter-result" id="currencyOutput">
+          500 USD = PKR 140,000
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials & Dynamic Reviews Section -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Traveler Stories</span>
+        <h2 class="section-title">What Our Guests Say</h2>
+        <p class="section-description">Real reviews from domestic and international adventurers who explored Pakistan with us.</p>
+      </div>
+
+      <div class="testimonials-grid" id="dynamicReviewsGrid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Pakistan Horizons made our Hunza dream trip a reality! The 4x4 transport, luxury hotels, and local guide exceeded all expectations. We felt safe and pampered every single day."</p>
+          <div class="testimonial-author-wrap">
+            <div class="author-avatar">S</div>
+            <div class="author-info">
+              <h4>Sarah Johnson</h4>
+              <p>United Kingdom • Verified Hunza Traveler</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"The Lahore Mughal cultural tour was pure magic. Our guide knew every single historical detail of the Badshahi Mosque and Walled City. The Food Street dinner was unforgettable."</p>
+          <div class="testimonial-author-wrap">
+            <div class="author-avatar">M</div>
+            <div class="author-info">
+              <h4>Michael Chen</h4>
+              <p>Canada • Verified Lahore Traveler</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"From airport pickup in Islamabad to the alpine peaks of Malam Jabba and Swat, everything ran seamlessly. Truly the most hospitable country on earth."</p>
+          <div class="testimonial-author-wrap">
+            <div class="author-avatar">E</div>
+            <div class="author-info">
+              <h4>Emily Rodriguez</h4>
+              <p>USA • Verified Swat Traveler</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Review Section -->
+      <div class="planner-box" style="margin-top: 3.5rem;">
+        <h3 style="margin-bottom: 0.5rem;">Traveled with us? Leave your review</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.5rem;">Share your journey and inspire other travelers worldwide.</p>
+        <form id="submitReviewForm">
+          <div class="planner-fields" style="margin-bottom: 1.25rem;">
+            <div class="search-field">
+              <label>Your Name *</label>
+              <input type="text" id="revName" placeholder="e.g. Ayesha Tariq" required>
+            </div>
+            <div class="search-field">
+              <label>Origin Country / City *</label>
+              <input type="text" id="revLocation" placeholder="e.g. Australia / Karachi" required>
+            </div>
+            <div class="search-field">
+              <label>Rating (1-5 Stars) *</label>
+              <select id="revRating">
+                <option value="5" selected>★★★★★ (5/5 Exceptional)</option>
+                <option value="4">★★★★☆ (4/5 Very Good)</option>
+                <option value="3">★★★☆☆ (3/5 Average)</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <label>Destination Visited</label>
+              <select>
+                <option>Hunza Valley</option>
+                <option>Swat & Kalam</option>
+                <option>Skardu & Deosai</option>
+                <option>Lahore Cultural</option>
+                <option>Gwadar Coast</option>
+              </select>
+            </div>
+          </div>
+          <div class="search-field" style="margin-bottom: 1.5rem;">
+            <label>Your Feedback & Story *</label>
+            <textarea id="revText" rows="3" placeholder="Tell us about your experience..." required style="width: 100%; padding: 0.85rem; border: 1.5px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-main);"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Post Review</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Common Inquiries</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">Essential travel details, safety advice, visa guidance, and booking processes.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is traveling in Pakistan safe for families and foreign tourists?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, absolutely. Pakistan welcomes millions of international and domestic tourists each year. The northern areas (Hunza, Skardu, Swat) are widely known for low crime rates and extraordinary local hospitality. All our tours are accompanied by verified local guides and certified luxury transport.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the online booking & deposit system work?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>You can reserve any tour package instantly with zero upfront charge. Once submitted, our dedicated tour coordinator will send an official itinerary, lock your hotel rooms, and provide convenient payment options (bank transfer, credit card, or international wire).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can itineraries and hotel categories be customized?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>100%! All our packages can be modified according to your flight timings, family group size, budget, or preferred hotel tier (3-star boutique up to 5-star Serena/Luxus palaces).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you provide Pakistan E-Visa invitation letters (LOI)?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. As a government-registered tour operator, we issue official Letters of Invitation (LOI), hotel booking vouchers, and itinerary confirmations required for your Pakistan Online Visa application.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <div class="container">
+    <div class="newsletter-section">
+      <div class="newsletter-content">
+        <h2>Unlock Secret Pakistan Travel Deals</h2>
+        <p>Subscribe to receive quarterly seasonal discounts, early bird trek registrations, and exclusive cultural guides directly to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address..." required>
+          <button type="submit" class="btn btn-accent">Get Discounts</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Pakistan<span>Horizons</span></a>
+          <p>Pakistan's premier travel agency delivering bespoke expeditions, luxury cultural tours, and mountain trekking adventures with safety, authenticity, and unmatched hospitality.</p>
+          <div class="social-bar">
+            <a href="#" class="social-icon" title="Facebook">FB</a>
+            <a href="#" class="social-icon" title="Instagram">IG</a>
+            <a href="#" class="social-icon" title="YouTube">YT</a>
+            <a href="#" class="social-icon" title="Twitter">X</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul class="footer-links">
+            <li><a href="hunza.html">Hunza Valley</a></li>
+            <li><a href="swat.html">Swat Valley</a></li>
+            <li><a href="lahore.html">Lahore Heritage</a></li>
+            <li><a href="karachi.html">Karachi Coast</a></li>
+            <li><a href="islamabad.html">Islamabad Capital</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Tour Packages</a></li>
+            <li><a href="about.html">About Our Team</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="policies.html">Safety & Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Desk</h4>
+          <ul class="footer-contact-info">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>123 Blue Area, Jinnah Avenue, Islamabad, Pakistan</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+92 300 1234567 / +92 51 9876543</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>pakistanhorizons@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 - 2026 Pakistan Horizons. All rights reserved. Registered with Department of Tourist Services Pakistan.</p>
+        <p><a href="policies.html" style="color: #94a3b8;">Privacy Policy</a> • <a href="policies.html" style="color: #94a3b8;">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeBookingModal" aria-label="Close modal">✕</button>
+      <div id="modalStepContainer">
+        <div class="modal-header">
+          <span class="badge badge-primary" style="margin-bottom: 0.5rem;">Instant Reservation</span>
+          <h3 id="modalTourTitle">Pakistan Horizons Tour</h3>
+          <p>Customize your options and reserve your spot. No immediate upfront charge required.</p>
+        </div>
+
+        <form id="tourBookingForm">
+          <div class="search-form-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 1.25rem;">
+            <div class="search-field">
+              <label>Full Name *</label>
+              <input type="text" id="modalName" placeholder="e.g. John Doe / Sarah Khan" required>
+            </div>
+            <div class="search-field">
+              <label>Email Address *</label>
+              <input type="email" id="modalEmail" placeholder="yourname@gmail.com" required>
+            </div>
+            <div class="search-field">
+              <label>Phone / WhatsApp *</label>
+              <input type="tel" id="modalPhone" placeholder="+92 300 0000000" required>
+            </div>
+            <div class="search-field">
+              <label>Preferred Travel Date *</label>
+              <input type="date" id="modalDate" required>
+            </div>
+            <div class="search-field">
+              <label>Number of Guests</label>
+              <input type="number" id="modalAdults" value="1" min="1" max="30" required>
+            </div>
+            <div class="search-field">
+              <label>Accommodation Tier</label>
+              <select id="modalTier">
+                <option value="standard">Standard (3-Star)</option>
+                <option value="deluxe" selected>Deluxe (+35%)</option>
+                <option value="luxury">Luxury VIP (+75%)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Base Price Per Person:</span>
+              <div id="modalBasePrice" style="font-weight: 700; color: var(--text-main);">PKR 45,000</div>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Total Estimated Cost:</span>
+              <div id="modalEstimatedTotal" style="font-size: 1.4rem; font-weight: 800; color: var(--primary);">PKR 45,000</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-accent btn-lg" style="width: 100%;">
+            Confirm Reservation & Generate Voucher
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-actions">
+    <a href="https://wa.me/923001234567?text=Hello%20Pakistan%20Horizons%2C%20I%20would%20like%20to%20inquire%20about%20travel%20packages." target="_blank" class="float-btn float-whatsapp" title="Chat on WhatsApp">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+    </a>
+    <button id="floatTopBtn" class="float-btn float-top" title="Back to top">
+      ▲
+    </button>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
