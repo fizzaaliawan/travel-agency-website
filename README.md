@@ -1,11 +1,6 @@
 # Pakistan Horizons - Travel Agency & Tourism Website
 
 A responsive, multi-page frontend web application built for exploring destinations, calculating custom tour quotations, and booking travel packages across Pakistan.
-
----
-
-## Overview
-
 **Pakistan Horizons** is a modern travel agency platform designed to showcase tourism expeditions across Pakistan (including Hunza, Swat, Skardu, Lahore, Karachi, and Islamabad). The website features an interactive pricing calculator, dynamic filtering, real-time currency conversion, a customer review submission system, and a booking modal with WhatsApp integration.
 
 ---
@@ -52,9 +47,4 @@ A modern web browser (Google Chrome, Mozilla Firefox, Microsoft Edge, or Safari)
    npx serve .
    ```
 
----
 
-## Author
-
-Created by **Fizza Ali Awan**
-- GitHub: [@fizzaaliawan](https://github.com/fizzaaliawan)
