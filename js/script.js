@@ -6,6 +6,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initAuthUI();
   initThemeToggle();
   initDestinationFilters();
   initBookingModal();
@@ -56,6 +57,52 @@ function initNavbar() {
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
+    }
+  });
+}
+
+/* ==========================================================================
+   1.1 AUTHENTICATION UI & NAVBAR SYNC
+   ========================================================================== */
+function initAuthUI() {
+  const authNavSlot = document.querySelector('.nav-actions');
+  if (!authNavSlot || !window.PHAuth) return;
+
+  const authPageUrl = 'auth.html';
+
+  window.PHAuth.onAuthStateChanged(user => {
+    // Remove existing auth button / chip
+    const existing = document.getElementById('navAuthContainer');
+    if (existing) existing.remove();
+
+    const authContainer = document.createElement('div');
+    authContainer.id = 'navAuthContainer';
+    authContainer.style.display = 'flex';
+    authContainer.style.alignItems = 'center';
+    authContainer.style.gap = '0.5rem';
+
+    if (user) {
+      const initial = (user.displayName || 'U').charAt(0).toUpperCase();
+      authContainer.innerHTML = `
+        <a href="${authPageUrl}" class="nav-user-chip" title="View Account (${user.displayName})">
+          <div class="nav-user-avatar">${initial}</div>
+          <span style="max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${user.displayName ? user.displayName.split(' ')[0] : 'Account'}</span>
+        </a>
+      `;
+    } else {
+      authContainer.innerHTML = `
+        <a href="${authPageUrl}" class="btn btn-outline btn-sm" style="font-weight: 600; padding: 0.45rem 0.9rem;">
+          Sign In
+        </a>
+      `;
+    }
+
+    // Insert before theme toggle or at the beginning of actions
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+      authNavSlot.insertBefore(authContainer, themeBtn);
+    } else {
+      authNavSlot.appendChild(authContainer);
     }
   });
 }
@@ -241,6 +288,22 @@ function initBookingModal() {
       const total = document.getElementById('modalEstimatedTotal')?.textContent;
       const refCode = 'PH-' + Math.floor(100000 + Math.random() * 900000);
 
+      // Save to Firebase / Cloud database
+      if (window.PHAuth && window.PHAuth.saveBookingToCloud) {
+        window.PHAuth.saveBookingToCloud({
+          tourTitle: selectedBookingItem.title,
+          days: selectedBookingItem.days,
+          name,
+          email,
+          phone,
+          date,
+          adults,
+          tier,
+          total,
+          refCode
+        });
+      }
+
       // Render confirmation voucher
       const container = document.getElementById('modalStepContainer');
       if (container) {
@@ -285,7 +348,7 @@ function initBookingModal() {
         `;
       }
 
-      showToast(`Booking ${refCode} successfully created!`, 'success');
+      showToast(`Booking ${refCode} successfully saved & confirmed!`, 'success');
     });
   }
 }
@@ -295,6 +358,17 @@ function openBookingModal(item) {
   const titleEl = document.getElementById('modalTourTitle');
   const priceEl = document.getElementById('modalBasePrice');
   const totalEl = document.getElementById('modalEstimatedTotal');
+  const nameInput = document.getElementById('modalName');
+  const emailInput = document.getElementById('modalEmail');
+
+  // Autofill user profile if logged in
+  if (window.PHAuth) {
+    const user = window.PHAuth.getCurrentUser();
+    if (user) {
+      if (nameInput && !nameInput.value) nameInput.value = user.displayName || '';
+      if (emailInput && !emailInput.value) emailInput.value = user.email || '';
+    }
+  }
 
   if (titleEl) titleEl.textContent = item.title;
   if (priceEl) priceEl.textContent = `PKR ${item.basePrice.toLocaleString()}`;
@@ -425,11 +499,20 @@ function initFAQAccordion() {
 }
 
 /* ==========================================================================
-   8. REVIEW & TESTIMONIAL SYSTEM
+   8. REVIEW & TESTIMONIAL SYSTEM (FIREBASE / CLOUD INTEGRATED)
    ========================================================================== */
 function initReviewSystem() {
   const reviewForm = document.getElementById('submitReviewForm');
   const grid = document.getElementById('dynamicReviewsGrid');
+
+  // Autofill name if logged in
+  if (window.PHAuth) {
+    const user = window.PHAuth.getCurrentUser();
+    const nameInput = document.getElementById('revName');
+    if (user && nameInput && !nameInput.value) {
+      nameInput.value = user.displayName || '';
+    }
+  }
 
   if (reviewForm) {
     reviewForm.addEventListener('submit', (e) => {
@@ -441,21 +524,27 @@ function initReviewSystem() {
 
       const newReview = { name, location, rating: parseInt(rating, 10), text, date: 'Just now' };
 
-      // Save locally
+      // Save locally and sync to Firebase / Cloud database
+      if (window.PHAuth && window.PHAuth.submitCloudReview) {
+        window.PHAuth.submitCloudReview(newReview);
+      }
+
       const stored = JSON.parse(localStorage.getItem('ph_reviews') || '[]');
       stored.unshift(newReview);
       localStorage.setItem('ph_reviews', JSON.stringify(stored));
 
       appendReviewCard(newReview, true);
       reviewForm.reset();
-      showToast('Thank you for your feedback! Review posted.', 'success');
+      showToast('Thank you for your feedback! Review broadcast to all travelers.', 'success');
     });
   }
 
-  // Load stored reviews if grid exists
+  // Load stored and cloud reviews if grid exists
   if (grid) {
+    const cloudReviews = (window.PHAuth && window.PHAuth.getCloudReviews) ? window.PHAuth.getCloudReviews() : [];
     const stored = JSON.parse(localStorage.getItem('ph_reviews') || '[]');
-    stored.forEach(rev => appendReviewCard(rev, false));
+    const all = [...cloudReviews, ...stored.filter(r => !cloudReviews.some(cr => cr.id === r.id))];
+    all.forEach(rev => appendReviewCard(rev, false));
   }
 }
 
