@@ -1,7 +1,8 @@
-# Pakistan Horizons - Travel Agency & Tourism Website
+# Pakistan Horizons - Travel Agency & Tourism Platform
 
-A responsive, multi-page frontend web application built for exploring destinations, calculating custom tour quotations, and booking travel packages across Pakistan.
-**Pakistan Horizons** is a modern travel agency platform designed to showcase tourism expeditions across Pakistan (including Hunza, Swat, Skardu, Lahore, Karachi, and Islamabad). The website features an interactive pricing calculator, dynamic filtering, real-time currency conversion, a customer review submission system, and a booking modal with WhatsApp integration.
+**Pakistan Horizons** is a premium, fully responsive multi-page travel and tourism web application engineered to showcase Pakistan’s most breathtaking destinations — from the majestic peaks of Hunza and Skardu to the historic Mughal grandeur of Lahore and the vibrant coastline of Karachi.
+
+Designed with an immersive, mobile-first aesthetic and modern interactive capabilities, the platform empowers travelers with a dynamic destination explorer, real-time trip cost and itinerary quotation calculator, live multi-currency converter, interactive customer review submission system, and an instant booking modal with automated voucher generation and direct WhatsApp guide integration.
 
 ---
 
